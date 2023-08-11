@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexForms</title>
+    <!-- <link rel="stylesheet" href="/CLASS TASK/forms.css"> -->
+</head>
+<body>
+    <!-- <div class="div-1">
+        <form action="">
+            <div class="div1">
+                <span>
+
+                    <label for="">First Name:</label> <br>
+                    <input type="text"> <br><br>
+                </span>
+                
+                <span>
+
+                    <label for="">Password:</label> <br>
+                    <input type="password"><br><br>
+                </span>
+            </div>
+
+            <label for="">Numbers:</label> <br>
+            <input type="number"><br><br>
+
+            <select name="" id="">
+                <option value="">Select your favourite car</option>
+                <option value="">Volvo</option>
+                <option value="">BMW</option>
+                <option value="">Camry</option>
+                <option value="">Benz</option>
+            </select><br><br>
+            <input type="file"><br><br>
+
+            <label for="">what is your gender:</label> <br> <br>
+            <input type="radio" name="radio"> 
+            <label for="">Male</label><br>
+            <input type="radio" name="radio">
+            <label for="">Female</label><br>
+
+            <input type="radio" name="radio">
+            <label for="">others</label><br><br>
+
+            <label for="">Ice cream flavours</label><br><br>
+            <input type="checkbox" name="" id="">
+            <label for=""> vanila</label><br><br>
+
+            <input type="checkbox" name="" id="">
+            <label for="">strawbery</label><br><br>
+
+            <input type="checkbox" name="" id="">
+            <label for="">chocolate</label><br><br>
+
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+
+            <input type="button" value="Submit">
+
+        </form>
+    </div> -->
+    <div id="message" style="display: none; color: white;background-color: green;
+    " >
+       Successful!
+    </div>    
+    <div id="errorMsg" style="display: none; color: white;background-color: red;
+    " >
+       error please input correct details 
+    </div>   
+     <div id="EPlength" style="display: none; color: white;background-color: yellow;
+    " >
+       username or password too small
+    </div>   
+
+    <form action="" id="myForm"    >
+<label for="username">Username: </label><br>
+<input type="text" name="" id="username"><br><br>
+<label for="email">Email</label><br>
+<input type="email" id="email"> <br> <br>
+<label for="password">Password</label><br>
+<input type="password" id="password" required> 
+<button id="eye" >Eye</button><br><br>
+
+<button type="password" id="submitButton">Submit</button>
+</form>
+
+<script>
+
+const myForm = document.getElementById('myForm');
+const submitButton = document.getElementById('submitButton');
+const message = document.getElementById('message');
+const errorMsg = document.getElementById('errorMsg');
+const EPlength = document.getElementById('EPlength');
+
+submitButton.addEventListener(
+    "click",function(event){
+        event.preventDefault();
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        function clearErr(){
+            errorMsg.style.display = "none";
+            
+        }
+        
+        if (myForm.checkValidity()){
+            message.style.display = "block";
+            errorMsg.style.display = "none";
+            setTimeout(() => {
+                message.style.display = "none"; 
+            }, 3000);
+            myForm.reset();
+            
+        }
+        else if (username.value.length < 5 || password.value.length < 5){
+            EPlength.style.display = "block";
+            setTimeout(() => {
+                EPlength.style.display = "none"; 
+            }, 3000);
+
+        }
+        else {
+            errorMsg.style.display = "block";
+             setTimeout(clearErr, 3000);
+            // setTimeout(() => {
+                
+            // }, 3000);
+        }
+        
+    });
+    
+    eye.addEventListener(
+    "click",function(event){
+        event.preventDefault();
+
+        if (password.type=="password")  {
+    password.type= "text"
+    }    
+    else {
+    password.type = "password"
+    }
+
+
+
+     });
+    </script>
+    
+    </body>
+    </html>
+    

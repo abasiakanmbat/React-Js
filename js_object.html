@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
+        // let user = {
+        //     name: "John",
+        //     age: 30
+        // };
+
+        // let key = prompt("What do you want to know about the user?", "name");
+        
+        // // access by variable
+        // alert(user[key]); // John (if enter "name")
+
         let user = {
-  name: "John",
-  age: 30
-};
+            name:'david',  // same as name:name
+            return: 30,
+            friend:'jones'
+        };
 
-let key = prompt("What do you want to know about the user?", "name");
+        // Object.values()
+        const valueArray = Object.values(user);
+        console.log(valueArray);
+        // alert(valueArray );
 
-// access by variable
-alert( user[key] ); // John (if enter "name")
+        // Object.keys()
+
+        const keysArray = Object.keys(user);
+        console.log(keysArray);
+        // alert(keysArray );
+
+// Object.entries()
+const Pairs = Object.entries(user);
+console.log(Pairs);
+
+
+
+
+//         let animal = {
+//   eats: true
+// };
+// let rabbit = {
+//   jumps: true
+// };
+
+// rabbit.__proto__ = animal; // (*)
+
+// we can find both properties in rabbit now:
+// alert( rabbit.eats ); // true (**)
+// alert( rabbit.jumps ); // true
+
     </script>
+
+    
 </body>
+
 </html>
